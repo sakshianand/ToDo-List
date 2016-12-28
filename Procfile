@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/webpack-dev-server
+worker: ./node_modules/.bin/webpack-dev-server
