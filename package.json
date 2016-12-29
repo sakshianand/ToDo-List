@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 	"build":"webpack",
-	"start":"./node_modules/.bin/webpack-dev-server"
+	"start":"webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -14,11 +14,7 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
   },
-   "repository": {
-    "type": "git",
-    "url": "https://github.com/sakshianand/ToDo-List"
-  },
-  "Dependencies": {
+  "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-preset-react": "^6.16.0",

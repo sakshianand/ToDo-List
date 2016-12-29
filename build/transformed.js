@@ -21905,70 +21905,44 @@
 
 	var React = __webpack_require__(1);
 	var DisplayItem = React.createClass({
-	  displayName: 'DisplayItem',
+		displayName: 'DisplayItem',
 
-	  getInitialState: function () {
-	    return {
-	      editing: false
+		/* getInitialState: function() {
+	     {
+	      editing:false
 	    };
-	  },
-	  propTypes: {
-	    todo: React.PropTypes.object.isRequired,
-	    handleDone: React.PropTypes.func.isRequired,
-	    handleDelete: React.PropTypes.func.isRequired
-	  },
-	  handleEditing: function () {
-	    this.setState({
-	      editing: true,
-	      changedText: this.props.todo.title
-	    });
-	  },
-	  handleEditingChange: function (e) {
-	    var _changedText = e.target.value;
-	    this.setState({ changedText: _changedText });
-	  },
-	  handleEditingDone: function (e) {
-	    console.log('editing is done');
-	    if (e.keyCode === 13) {
-	      this.setState({ editing: false });
-	    }
-	  },
-	  componentDidMount: function () {
-	    this.setState({
-	      changedText: this.props.todo.title
-	    });
-	  },
-	  render: function () {
-	    var todo = this.props.todo;
-	    var title = todo.title;
-	    var viewStyle = {};
-	    var editStyle = {};
-	    if (this.state.editing) {
-	      viewStyle.display = 'none';
-	    } else {
-	      editStyle.display = 'none';
-	    }
-	    return React.createElement(
-	      'li',
-	      { className: todo.done ? 'done' : '' },
-	      React.createElement(
-	        'div',
-	        { style: viewStyle, onDoubleClick: this.handleEditing.bind(this) },
-	        React.createElement('input', { checked: todo.done, onChange: this.props.handleDone.bind(null, title), type: 'checkbox' }),
-	        React.createElement(
-	          'label',
-	          null,
-	          this.state.changedText
-	        ),
-	        React.createElement(
-	          'a',
-	          { href: '#', className: 'destroy', onClick: this.props.handleDelete.bind(null, title) },
-	          '[X]'
-	        )
-	      ),
-	      React.createElement('input', { type: 'text', onChange: this.handleEditingChange.bind(this), onKeyDown: this.handleEditingDone.bind(this), style: editStyle, value: this.state.changedText })
-	    );
-	  }
+	 
+	 },*/
+		propTypes: {
+			todo: React.PropTypes.object.isRequired,
+			handleDone: React.PropTypes.func.isRequired,
+			handleDelete: React.PropTypes.func.isRequired
+		},
+		render: function () {
+			var todo = this.props.todo;
+			var title = todo.title;
+			/* var viewStyle = {};
+	   var editStyle ={};*/
+			return React.createElement(
+				'li',
+				{ className: todo.done ? 'done' : '' },
+				React.createElement(
+					'div',
+					null,
+					React.createElement('input', { checked: todo.done, onChange: this.props.handleDone.bind(null, title), type: 'checkbox' }),
+					React.createElement(
+						'label',
+						null,
+						title
+					),
+					React.createElement(
+						'a',
+						{ href: '#', className: 'destroy', onClick: this.props.handleDelete.bind(null, title) },
+						'[X]'
+					)
+				)
+			);
+		}
 	});
 	module.exports = DisplayItem;
 
